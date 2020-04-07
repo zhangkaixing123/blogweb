@@ -1,0 +1,114 @@
+html,body{
+    margin: 0;
+}
+
+.blog-header{
+    height: 70px;
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    box-shadow: 0 3px 10px rgba(10, 10, 10, 0.25);
+}
+
+.blog-logo{
+    height: 70px;
+    max-width: 150px;
+    text-align: center;
+    line-height: 70px;
+    margin-left: 350px;
+    float: left;
+}
+.blog-logo a{
+    text-decoration:none;
+    font-size: 36px;
+    color: #000;
+}
+.blog-navbar {
+    height: 70px;
+    line-height: 70px;
+    float: left;
+}
+.blog-navbar .blog-navbar-nav,.blog-navbar-dropdown{
+    margin: 0;
+    list-style-type:none;
+}
+.blog-navbar .nav-item{
+    float: left;
+    padding: 0 10px;
+}
+.blog-navbar .dropdown:after{
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+.blog-navbar .nav-item:hover{
+    background-color: #f3f3f3;
+}
+.blog-navbar .nav-item a{
+    text-decoration:none;
+    color: #000;
+}
+.blog-navbar .nav-item .blog-navbar-link:hover{
+    color: #22d0f0;
+}
+.blog-navbar .blog-navbar-this a{
+    color: #22d0f0;
+}
+.blog-navbar-dropdown{
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 10rem;
+    z-index: 999;
+    box-shadow: 0 3px 5px rgba(219, 219, 219, 0.51);
+    padding: 0;
+    display: none;
+}
+.blog-navbar-dropdown .dropdown-item{
+    height: 40px;
+    display: block;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 40px;
+}
+.blog-navbar-dropdown .dropdown-item:hover{
+    background-color: #f3f3f3;
+}
+.blog-navbar-dropdown .dropdown-item .dropdown-item-link:hover{
+    color: #22d0f0;
+}
+.blog-right{
+    float: right;
+    height: 70px;
+    line-height: 70px;
+    margin-right: 300px;
+    padding: 10px 0;
+}
+.blog-right .blog-search {
+    height: 50px;
+    width: 200px;
+    line-height: 50px;
+    border-radius: 2.5rem;
+    padding-left: 10px;
+    background-color: #dbdbdb;
+}
+.blog-search .seacher_input{
+    height: 45px;
+    width: 170px;
+    margin-left: 10px;
+    outline-color: invert ;
+    outline-style: none ;
+    outline-width: 0px ;
+    border: none ;
+    border-style: none ;
+    text-shadow: none ;
+    -webkit-appearance: none ;
+    -webkit-user-select: text ;
+    outline-color: transparent ;
+    box-shadow: none;
+    background-color: rgba(219, 219, 219, 0.2);
+}
