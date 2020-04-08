@@ -209,6 +209,7 @@ html,body{
     width: 220px;
     height: 150px;
     padding: 5px 5px;
+    padding-right: 20px;
 }
 .blog-article-img .blog-article-img-link img{
     width: 220px;
@@ -217,10 +218,13 @@ html,body{
 .blog-article-item .blog-article-title{
     height: 50px;
     text-align:left;
+    padding-top: 5px;
 }
 .blog-article-title h2{
     height: 50px;
     margin: 0;
+    line-height: 50px;
+    color: #e8e8e8;
 }
 .blog-content .blog-content-right{
     float: left;
