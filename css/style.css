@@ -200,7 +200,8 @@ html,body{
 }
 .blog-article-list .blog-article-item{
     background-color: rgba(8, 8, 16, 0.5);
-    height: 150px;
+    height: 152px;
+    line-height: 152px;
     display: block;
 }
 .blog-article-item .blog-article-img{
@@ -211,7 +212,6 @@ html,body{
     height: 150px;
 }
 .blog-article-item .blog-article-title{
-    margin: 1px 0;
     width: 100px;
 }
 .blog-content .blog-content-right{
