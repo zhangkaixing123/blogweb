@@ -187,7 +187,7 @@ html,body{
     padding: 5px;
     float: left;
     width: 55%;
-    margin-top: 70px;
+    margin-top: 90px;
     margin-left: 19.5%;
 }
 .blog-content-middle .blog-articles{
@@ -200,19 +200,27 @@ html,body{
 }
 .blog-article-list .blog-article-item{
     background-color: rgba(8, 8, 16, 0.5);
-    height: 152px;
-    line-height: 152px;
+    height: 160px;
+    line-height: 160px;
     display: block;
 }
 .blog-article-item .blog-article-img{
     float: left;
+    width: 220px;
+    height: 150px;
+    padding: 5px 5px;
 }
 .blog-article-img .blog-article-img-link img{
     width: 220px;
     height: 150px;
 }
 .blog-article-item .blog-article-title{
-    width: 100px;
+    height: 50px;
+    text-align:left;
+}
+.blog-article-title h2{
+    height: 50px;
+    margin: 0;
 }
 .blog-content .blog-content-right{
     float: left;
