@@ -106,7 +106,7 @@ html,body{
     background-color: #252525;
 }
 .blog-search .seacher_input{
-    height: 45px;
+    height: 42px;
     width: 170px;
     margin-left: 10px;
     outline-color: invert ;
@@ -203,6 +203,15 @@ html,body{
     height: 160px;
     line-height: 160px;
     display: block;
+    margin-bottom: 10px;
+    border: 1px solid;
+}
+.blog-article-list .blog-article-item:hover{
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    border-color: #0690e8;
 }
 .blog-article-item .blog-article-img{
     float: left;
@@ -211,30 +220,160 @@ html,body{
     padding: 5px 5px;
     padding-right: 20px;
 }
+.blog-article-img .blog-article-cat{
+    display: block;
+    position: absolute;
+    height: 20px;
+    line-height: 20px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #e5eee2;
+    min-width: 50px;
+    background-color: #0690e8;
+    max-width: 180px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 .blog-article-img .blog-article-img-link img{
     width: 220px;
     height: 150px;
 }
-.blog-article-item .blog-article-title{
-    height: 50px;
-    text-align:left;
-    padding-top: 5px;
+.blog-article-img-link img:hover{
+    box-shadow: 0 0 10px rgba(235, 235, 235, 0.51);
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
 }
-.blog-article-title h2{
-    height: 50px;
+.blog-article-item .blog-article-title{
+    height: 40px;
+    text-align:left;
+}
+.blog-article-title h3{
+    height: 40px;
     margin: 0;
-    line-height: 50px;
+    line-height: 40px;
     color: #e8e8e8;
+    font-weight:normal;
+}
+
+.blog-article-title .blog-article-title-link{
+    text-decoration: none;
+    color: #f6f6f6;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+    border-bottom: 1px solid #0690e8;
+}
+.blog-article-title .blog-article-title-link:hover{
+    color: #22d0f0;
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.blog-article-item .blog-article-desc{
+    padding-top: 10px;
+    padding-right: 10px;
+    height: 60px;
+    line-height: 20px;
+    text-align: left;
+    color: #f6f6f6;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    font-size: 14px;
+}
+.blog-article-item .blog-article-info{
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    color: #f6f6f6;
+    font-size: 13px;
+}
+.blog-article-info span{
+    padding-right: 10px;
+}
+.blog-article-info span i{
+    font-size: 12px;
+    padding-right: 5px;
 }
 .blog-content .blog-content-right{
     float: left;
     padding: 5px;
     width: 20%;
     height: 500px;
-    background-color: #b4696f;
     margin-top: 90px;
 }
 
+.blog-hot-articles {
+    background-color: rgba(9, 9, 23, 0.5);
+}
+.blog-hot-tag-articles{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #0690e8;
+    color: #f6f6f6;
+    text-align: center;
+}
+.blog-hot-article-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.blog-hot-article-item{
+    height: 70px;
+    margin-top: 2px;
+    border-bottom: 1px solid #0690e8;
+}
+.blog-hot-article-item:hover{
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+}
+.blog-hot-article-link{
+    text-decoration: none;
+    display: block;
+    height: 70px;
+}
+.blog-hot-article-img{
+    float: left;
+    height: 70px;
+}
+.blog-hot-article-img img{
+    width: 100px;
+    height: 70px;
+}
+.blog-hot-article-title{
+    color: #f6f6f6;
+    font-size: 14px;
+    padding-left: 5px;
+    overflow: hidden;
+    text-align: left;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.blog-hot-article-info{
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+.blog-hot-article-info span{
+    padding-right: 10px;
+    color: #f6f6f6;
+    font-size: 12px;
+}
+.blog-hot-article-info span i{
+    font-size: 11px;
+    padding-right: 5px;
+}
 /*流星划过特效*/
 
 .star {
