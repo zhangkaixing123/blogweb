@@ -301,6 +301,26 @@ html,body{
     font-size: 12px;
     padding-right: 5px;
 }
+.blog-pagination{
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.blog-page-item{
+    display: inline;
+}
+.blog-page-item > a, .blog-page-item > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #428bca;
+    text-decoration: none;
+    background-color: rgba(9, 9, 23, 0.5);
+    border: 1px solid rgba(9, 9, 23, 0.5);
+}
 .blog-content .blog-content-right{
     float: left;
     padding: 5px;
@@ -528,15 +548,20 @@ html,body{
     margin: 0;
     list-style: none;
     padding: 10px 5px;
+    column-count: 2;
+    column-gap: 0;
+    counter-reset: item-counter;
 }
 .friendly-link{
-    background-color: rgba(9, 9, 23, 0.49);
-    width: 48%;
     margin-left: 5px;
     margin-top: 5px;
     float: left;
     text-align: left;
     line-height: 26px;
+    padding: 3px;
+    box-sizing: border-box;
+    break-inside: avoid;
+    counter-increment: item-counter;
 }
 .friendly-link a{
     text-decoration: none;
@@ -548,6 +573,26 @@ html,body{
     -moz-transition: all 0.3s linear;
     -o-transition: all 0.3s linear;
     transition: all 0.3s linear;
+}
+
+/*底部样式*/
+.blog-footer{
+    width: 100%;
+    background-color: rgba(8, 8, 16, 0.5);
+    height: 70px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+}
+.blog-footer p{
+    color: #f6f6f6;
+    font-size: 14px;
+    margin: 5px 0;
+}
+.blog-footer p>a{
+    color: #22d0f0;
+    text-decoration: none;
 }
 
 /*流星划过特效*/
