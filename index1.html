@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>星空博客</title>
+    <meta name="keywords" content="星空博客,博客,PHP,MySQL,HTML,JavaScript,CSS">
+    <meta name="description" content="一个用于记录心情日志,技术文章,黑科技等的博客">
+    <!--<link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="./css/style1.css">
+</head>
+<body>
+
+<div class="blog-header">
+
+</div>
+<div class="blog-center">
+
+</div>
+
+<!--背景-->
+<div class="stars"></div>
+</body>
+<script src="./js/jquery-2.1.1.js"></script>
+<script>
+    $(document).ready(function(){
+        var wH = window.innerHeight;
+        var wW = window.innerWidth;
+        var stars=800;  /*星星的密集程度，数字越大越多*/
+        var $stars=$(".stars");
+        var r=800;   /*星星的看起来的距离,值越大越远,可自行调制到自己满意的样子*/
+        for(var i=0;i<stars;i++){
+            var $star=$("<div/>").addClass("star");
+            $stars.append($star);
+        }
+        $(".star").each(function(){
+            var cur=$(this);
+            var s=0.2+(Math.random()*1);
+            var curR=r+(Math.random()*300);
+            cur.css({
+                transformOrigin:"0 0 "+curR+"px",
+                transform:" translate3d(0,0,-"+curR+"px) rotateY("+(Math.random()*360)+"deg) rotateX("+(Math.random()*-50)+"deg) scale("+s+","+s+")"
+            })
+        })
+    })
+
+</script>
+</html>
