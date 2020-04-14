@@ -6,43 +6,76 @@
     <title>星空博客</title>
     <meta name="keywords" content="星空博客,博客,PHP,MySQL,HTML,JavaScript,CSS">
     <meta name="description" content="一个用于记录心情日志,技术文章,黑科技等的博客">
-    <!--<link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">-->
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style1.css">
 </head>
 <body>
 
 <div class="blog-header">
-
+    <div class="blog-logo">
+        <a href="#">星空</a>
+    </div>
+    <div class="blog-navbar">
+        <ul>
+            <li class="blog-navbar-item">
+                <a href="#" class="blog-navbar-link">首页</a>
+            </li>
+            <li class="blog-navbar-item">
+                <a href="#" class="blog-navbar-link">分类</a>
+                <ul>
+                    <li class="blog-navbar-son-item">
+                        <a href="#" class="blog-navbar-son-link">PHP</a>
+                    </li>
+                    <li class="blog-navbar-son-item">
+                        <a href="#" class="blog-navbar-son-link">MySQL</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="blog-navbar-item">
+                <a href="#" class="blog-navbar-link">友情链接</a>
+            </li>
+            <li class="blog-navbar-item">
+                <a href="#" class="blog-navbar-link">更多</a>
+                <ul>
+                    <li class="blog-navbar-son-item">
+                        <a href="#" class="blog-navbar-son-link">关于我</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="blog-search">
+        <input type="text" class="blog-search-input" name="search_val" placeholder="搜索...">
+        <button><i class="fa fa-search"></i></button>
+    </div>
+    <div class="blog-menu">
+        <i class="fa fa-list"></i>
+    </div>
 </div>
 <div class="blog-center">
 
 </div>
 
 <!--背景-->
-<div class="stars"></div>
+<div class="star comet"></div>
 </body>
 <script src="./js/jquery-2.1.1.js"></script>
 <script>
-    $(document).ready(function(){
+    $(function () {
         var wH = window.innerHeight;
         var wW = window.innerWidth;
-        var stars=800;  /*星星的密集程度，数字越大越多*/
-        var $stars=$(".stars");
-        var r=800;   /*星星的看起来的距离,值越大越远,可自行调制到自己满意的样子*/
-        for(var i=0;i<stars;i++){
-            var $star=$("<div/>").addClass("star");
-            $stars.append($star);
-        }
-        $(".star").each(function(){
-            var cur=$(this);
-            var s=0.2+(Math.random()*1);
-            var curR=r+(Math.random()*300);
-            cur.css({
-                transformOrigin:"0 0 "+curR+"px",
-                transform:" translate3d(0,0,-"+curR+"px) rotateY("+(Math.random()*360)+"deg) rotateX("+(Math.random()*-50)+"deg) scale("+s+","+s+")"
-            })
-        })
-    })
 
+        var generateStars = function generateStars(n) {
+            for (var i = 0; i < n; i++) {
+                var div = document.createElement('div');
+                div.className = i % 20 == 0 ? 'star star--big' : i % 9 == 0 ? 'star star--medium' : 'star';
+                // random everywhere!
+                div.setAttribute('style', 'top:' + Math.round(Math.random() * wH) + 'px;left:' + Math.round(Math.random() * wW) + 'px;animation-duration:' + (Math.round(Math.random() * 3000) + 3000) + 'ms;animation-delay:' + Math.round(Math.random() * 3000) + 'ms;');
+                document.body.appendChild(div);
+            }
+        };
+
+        generateStars(150);
+    });
 </script>
 </html>

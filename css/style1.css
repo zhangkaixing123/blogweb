@@ -2,42 +2,91 @@
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+    color: #FFF;
+}
+ul,li{
+    list-style: none;
+}
 
 /*背景特效*/
 body {
     background: radial-gradient(200% 100% at bottom center, #f7f7b6, #e96f92, #75517d, #1b2947);
-    background: radial-gradient(220% 105% at top center, #1b2947 10%, #75517d 40%, #e96f92 65%, #f7f7b6);
+    background: radial-gradient(250% 125% at top center, #1b2947 10%, #75517d 40%, #e96f92 65%, #f7f7b6);
     background-attachment: fixed;
 }
-@keyframes rotate {
-    0% {
-        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
-        -webkit-transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
-    }
-    100% {
-        transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
-        -webkit-transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
-    }
-}
-.stars {
-    transform: perspective(500px);
-    transform-style: preserve-3d;
-    position: absolute;
-    bottom: 0;
-    perspective-origin: 50% 100%;
-    left: 0;
-    animation: rotate 90s infinite linear;
-}
+/*流星划过特效*/
+
 .star {
-    width: 2px;
-    height: 2px;
-    background: #F7F7B6;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: rgba(237, 205, 163, 0.8);
+    box-shadow: 0 0 40px 0 rgba(237, 205, 163, 0.8), 0 0 20px 0 #FFFFFF;
+    animation: glow 5s infinite;
+}
+.star--medium {
+    width: 6px;
+    height: 6px;
+}
+.star--big {
+    width: 9px;
+    height: 9px;
+    box-shadow: 0 0 40px 0 #EDCDA3, 0 0 20px 0 #FFFFFF, inset 0 0 4px #FFFFFF;
+}
+
+.comet {
+    width: 6px;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 40px 0 #EDCDA3, 0 0 20px 0 #FFFFFF, inset 0 0 8px rgba(255, 255, 255, 0.6);
+    top: 0;
+    left: 80%;
+    opacity: 0.3;
+    transform: rotate(-45deg) translate(0, -50px);
+    animation: comet 6s infinite;
+}
+.comet:after {
+    content: '';
+    width: 20vw;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(222, 190, 149, 0.4);
     position: absolute;
     top: 0;
     left: 0;
-    transform-origin: 0 0 -300px;
-    transform: translate3d(0, 0, -300px);
-    backface-visibility: hidden;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+@keyframes comet {
+    0% {
+        transform: rotate(-45deg) translateX(0);
+        opacity: 0.3;
+    }
+    10% {
+        opacity: 1;
+    }
+    20% {
+        transform: rotate(-45deg) translateX(-100vw);
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(-45deg) translateX(-100vw);
+        opacity: 0;
+    }
 }
 
 /*顶部*/
@@ -46,12 +95,155 @@ body {
     height: 70px;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+.blog-logo{
+    height: 70px;
+    width: 150px;
+    text-align: center;
+    margin: auto 0;
+    align-items: center;
+    position: absolute;
+    left: 100px;
+}
+.blog-logo>a{
+    display: block;
+    line-height: 70px;
+    color: #FFF;
+    font-family: 楷体;
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.blog-navbar{
+    height: 70px;
+    position: absolute;
+    left: 260px;
+    max-width: 50%;
+}
+.blog-navbar>ul>.blog-navbar-item{
+    float: left;
+    position: relative;
+    line-height: 70px;
+    margin: 0 5px;
+    padding: 0 5px;
+    transition:0.4s;
+}
+.blog-navbar>ul>.blog-navbar-item:hover{
+    background: rgba(0,0,0,0.5);
+}
+.blog-navbar>ul>.blog-navbar-item:hover>ul{
+    display: block;
+}
+.blog-navbar>ul>.blog-navbar-item>.blog-navbar-link{
+    font-size: 17px;
+}
+.blog-navbar>ul>.blog-navbar-item>.blog-navbar-link:hover{
+    color: #02aff3;
+}
+.blog-navbar>ul>.blog-navbar-item>ul{
+    min-width: 100px;
+    position: absolute;
+    display: none;
+}
+.blog-navbar>ul>.blog-navbar-item>ul>.blog-navbar-son-item{
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+.blog-navbar>ul>.blog-navbar-item>ul>.blog-navbar-son-item:hover{
+    background: rgba(0,0,0,0.5);
+}
+.blog-navbar-son-link:hover{
+    color: #02aff3;
+}
+
+.blog-search{
+    width: 250px;
+    position: absolute;
+    height: 50px;
+    line-height: 50px;
+    top: 10px;
+    right: 100px;
+    background-color: #252525;
+    border-radius: 2.5rem;
+    text-align: center;
+}
+.blog-search>.blog-search-input{
+    width: 180px;
+    height: 40px;
+    border: 0;
+    position: relative;
+    border-radius: 2px;
+    outline-color: invert;
+    outline-style: none;
+    outline-width: 0;
+    border: none;
+    border-style: none ;
+    text-shadow: none ;
+    -webkit-appearance: none ;
+    -webkit-user-select: text ;
+    outline-color: transparent ;
+    box-shadow: none;
+    background-color: #252525;
+    color: #FFF;
+}
+.blog-search>button{
+    color: #FFF;
+    background-color: #252525;
+    height: 30px;
+    width: 30px;
+    border-style: none;
+    font-size: 20px;
+}
+.blog-menu{
+    display: none;
 }
 
 
+
+
+@media screen and (max-width: 768px){
+    .blog-logo{
+        left: 20px;
+    }
+    .blog-navbar{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 1);
+        z-index: 99;
+        left: 0;
+        max-width: 80%;
+    }
+    .blog-search{
+        position: relative;
+        z-index: 100;
+        margin: 0 auto;
+        left: auto;
+        right: auto;
+    }
+    .blog-menu{
+        display: block;
+        position: absolute;
+        right: 25px;
+        height: 40px;
+        line-height: 40px;
+        top: 15px;
+        color: #FFF;
+        font-size: 20px;
+        cursor: pointer;
+        width: 50px;
+        text-align: center;
+        background-color: #6c6a6a;
+        border-radius: 2px;
+    }
+
+}
+
 /*内容*/
-/*.blog-center{*/
-    /*width: 100%;*/
+.blog-center{
+    width: 100%;
     /*height: 1500px;*/
-    /*background-color: #22d0f0;*/
-/*}*/
+}
