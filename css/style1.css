@@ -196,6 +196,7 @@ body {
     width: 30px;
     border-style: none;
     font-size: 20px;
+    outline-color:transparent;
 }
 .blog-menu{
     display: none;
