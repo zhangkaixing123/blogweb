@@ -23,7 +23,7 @@
                 </li>
                 <li class="blog-navbar-item">
                     <a href="#" class="blog-navbar-link dropdown">分类</a>
-                    <ul class="show">
+                    <ul>
                         <li class="blog-navbar-son-item">
                             <a href="#" class="blog-navbar-son-link">PHP</a>
                         </li>
@@ -37,7 +37,7 @@
                 </li>
                 <li class="blog-navbar-item">
                     <a href="#" class="blog-navbar-link dropdown">更多</a>
-                    <ul class="hide">
+                    <ul>
                         <li class="blog-navbar-son-item">
                             <a href="#" class="blog-navbar-son-link">关于我</a>
                         </li>
@@ -50,14 +50,19 @@
             <button><i class="fa fa-search"></i></button>
         </div>
     </div>
-    <div class="blog-menu">
+    <div class="blog-menu" id="blog-menu">
         <i class="fa fa-list"></i>
     </div>
 </div>
 <div class="blog-center">
-
+    <div class="blog-left"></div>
+    <div class="blog-right"></div>
 </div>
 
+<!--回到顶部-->
+<div id="gotop">
+    <a class="gotop" draggable="false"><i class="fa fa-chevron-up"></i></a>
+</div>
 <!--背景-->
 <div class="star comet"></div>
 </body>
@@ -78,6 +83,36 @@
         };
 
         generateStars(150);
+
+        $("#blog-menu").click(function () {
+            if($(".blog-menu-info").hasClass("show")){
+                $(".blog-menu-info").removeClass("show");
+                $(".blog-menu-info").addClass("hide");
+            }else{
+                $(".blog-menu-info").removeClass("hide");
+                $(".blog-menu-info").addClass("show");
+            }
+        });
+
+        //监听页面滚动
+        $(window).scroll(function () {
+            if($(window).scrollTop() > 300){
+
+                $("#gotop").fadeIn(700,function () {
+                    $("#gotop").show()
+                });
+            }else{
+                $("#gotop").fadeOut(700,function () {
+                    $("#gotop").hide()
+                });
+            }
+        });
+
+        $("#gotop").click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
     });
 </script>
 </html>
