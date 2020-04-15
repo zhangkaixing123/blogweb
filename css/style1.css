@@ -114,6 +114,9 @@ body {
     font-size: 32px;
     font-weight: bolder;
 }
+.blog-menu-info{
+    height: 70px;
+}
 
 .blog-navbar{
     height: 70px;
@@ -128,6 +131,17 @@ body {
     margin: 0 5px;
     padding: 0 5px;
     transition:0.4s;
+}
+.dropdown:after{
+    display: inline-block;
+    margin-left: 0.255em;
+    vertical-align: 0.255em;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+    color: #f9f9f9;
 }
 .blog-navbar>ul>.blog-navbar-item:hover{
     background: rgba(0,0,0,0.5);
@@ -188,6 +202,7 @@ body {
     box-shadow: none;
     background-color: #252525;
     color: #FFF;
+    font-size: 16px;
 }
 .blog-search>button{
     color: #FFF;
@@ -204,19 +219,47 @@ body {
 
 
 
-
+/*小屏幕尺寸*/
 @media screen and (max-width: 768px){
     .blog-logo{
         left: 20px;
     }
-    .blog-navbar{
+    .blog-menu-info{
         position: fixed;
-        width: 100%;
+        width: 75%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 0.71);
         z-index: 99;
-        left: 0;
-        max-width: 80%;
+        overflow-y: scroll;
+    }
+    .blog-navbar{
+        width: 100%;
+        max-width: 100%;
+        top: 70px;
+        left: auto;
+        display: block;
+        height: auto;
+    }
+    .blog-navbar>ul>.blog-navbar-item{
+        clear:both;
+        display: block;
+        float: none;
+        text-align: center;
+        height: auto;
+        line-height: 50px;
+    }
+    .blog-navbar>ul>.blog-navbar-item:hover{
+
+    }
+    .blog-navbar>ul>.blog-navbar-item>ul{
+        position: relative;
+        background-color: #131313;
+        width: 100%;
+        max-width: 100%;
+        visibility: visible;
+    }
+    .blog-navbar>ul>.blog-navbar-item>ul>.blog-navbar-son-item{
+
     }
     .blog-search{
         position: relative;
