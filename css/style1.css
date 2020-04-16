@@ -97,6 +97,7 @@ body {
     background-color: rgba(0,0,0,0.5);
     position: fixed;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    z-index: 99999;
 }
 .blog-logo{
     height: 70px;
@@ -316,16 +317,50 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-
+.blog-info{
+    width: 250px;
+    height: 250px;
+    position: fixed;
+    top: 100px;
+    background-color: #f3f3f3;
+}
 .blog-left{
     width: 80%;
     height: 1500px;
     background-color: #22d0f0;
     float: left;
+    margin-top: 100px;
+}
+.blog-articles{
+    width: calc(100% - 250px);
+    height: 200px;
+    background-color: #d9f0e2;
+    margin-left: 250px;
 }
 .blog-right{
     float: left;
     width: 20%;
     height: 1500px;
     background-color: #e96f92;
+    margin-top: 100px;
+}
+.blog-articles{
+
+}
+
+/*小屏幕content尺寸*/
+@media screen and (max-width: 900px){
+    .blog-center{
+        width: 90%;
+    }
+    .blog-left{
+        width: 100%;
+    }
+    .blog-articles{
+        width: 100%;
+        margin-left: 0;
+    }
+    .blog-right,.blog-info{
+        display: none;
+    }
 }

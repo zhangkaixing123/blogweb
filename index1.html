@@ -55,7 +55,16 @@
     </div>
 </div>
 <div class="blog-center">
-    <div class="blog-left"></div>
+    <div class="blog-info">
+
+    </div>
+    <div class="blog-left">
+        <div class="blog-articles">
+            <div class="blog-article">
+
+            </div>
+        </div>
+    </div>
     <div class="blog-right"></div>
 </div>
 
@@ -86,9 +95,13 @@
 
         $("#blog-menu").click(function () {
             if($(".blog-menu-info").hasClass("show")){
+                $("#blog-menu i:first").addClass("fa-list");
+                $("#blog-menu i:first").removeClass("fa-times");
                 $(".blog-menu-info").removeClass("show");
                 $(".blog-menu-info").addClass("hide");
             }else{
+                $("#blog-menu i:first").removeClass("fa-list");
+                $("#blog-menu i:first").addClass("fa-times");
                 $(".blog-menu-info").removeClass("hide");
                 $(".blog-menu-info").addClass("show");
             }
