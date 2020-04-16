@@ -4,7 +4,25 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    .d1{
+        margin-top:100px;
+        border:1px solid red;
+        width:200px;
+        height:200px;
+        text-align:center;
+        line-height:200px;
+    }
+    .d2{
+        margin-top:80px;
+        border:1px solid red;
+        width:200px;
+        height:200px;
+        text-align:center;
+        line-height:200px;
+    }
+</style>
 <body>
-
+<div class="d1" onMouseMove="this.className='d2'" onMouseOut="this.className='d1'">这是答一个示例..</div>
 </body>
 </html>
