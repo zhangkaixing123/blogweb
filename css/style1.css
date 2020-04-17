@@ -220,7 +220,7 @@ body {
 }
 .gotop{
     position: fixed;
-    bottom: 20px;
+    bottom: 100px;
     right: 20px;
     display: block;
     width: 50px;
@@ -316,6 +316,8 @@ body {
 .blog-center{
     width: 80%;
     margin: 0 auto;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 .blog-info{
     width: 250px;
@@ -407,11 +409,31 @@ body {
     float: left;
     margin-top: 100px;
 }
-.blog-articles{
+.blog-articles,.blog-article-content{
     width: calc(100% - 260px);
-    height: 500px;
     margin-left: 250px;
     padding: 0 10px;
+}
+.blog-breadcrumb{
+    height: 50px;
+    line-height: 50px;
+    text-align: left;
+    padding: 5px;
+    background-color: #22d0f0;
+    background-color: rgba(27, 41, 71, 0.6);
+    margin-bottom: 20px;
+}
+.blog-breadcrumb-link{
+    color: #22d0f0;
+    padding: 0 5px;
+}
+.blog-breadcrumb-link:hover{
+    color: #00a7f0;
+}
+.blog-breadcrumb-link::after{
+    content: "/";
+    color: #f6f6f6;
+    padding-left: 10px;
 }
 .blog-article{
     display: block;
@@ -456,13 +478,15 @@ body {
     padding: 0 5px;
 }
 .article-info>h2,
-.hot-info>h2{
+.hot-info>h2,
+.article-title-info>h2{
     font-size: 1.5625rem;
     font-weight: 400;
     color: #ffffff;
     margin-bottom: .75rem;
 }
-.article-info>.info{
+.article-info>.info,
+.article-title-info>.info{
     margin-bottom: 10px;
 }
 .blog-pages{
@@ -494,11 +518,9 @@ body {
 .blog-right{
     float: left;
     width: 20%;
-    height: 1500px;
     margin-top: 100px;
 }
 .blog-web-info{
-    width: 100%;
     background-color: rgba(27, 41, 71, 0.6);
     padding: 5px;
     margin-left: 10px;
@@ -516,7 +538,6 @@ body {
     color: #22d0f0;
 }
 .blog-hot-articles{
-    width: 100%;
     margin-left: 10px;
     margin-top: 10px;
     padding: 5px;
@@ -555,12 +576,12 @@ body {
     .blog-left{
         width: 100%;
     }
-    .blog-articles{
+    .blog-articles,.blog-article-content{
         width: 100%;
         margin-left: 0;
         padding: 0;
     }
-    .blog-article-img:hover{
+    .blog-article:hover{
         -ms-transform:scale(1); /* IE 9 */
         -webkit-transform: scale(1); /* Safari */
         transform: scale(1);
@@ -575,6 +596,127 @@ body {
         margin-left: 10px;
     }
     .blog-right,.blog-info{
+        display: none;
+    }
+}
+
+/*底部*/
+.blog-footer{
+    margin-top: 20px;
+    width: 100%;
+    min-height: 70px;
+    background-color: #000000;
+}
+.blog-footer-web{
+    width: 100%;
+    min-height: 70px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    font-size: 0.8rem;
+}
+.blog-footer-web a{
+    color: #22d0f0;
+}
+
+/*内容页*/
+.blog-content-header{
+    height: 250px;
+    position: relative;
+    background: rgb(44, 42, 42);
+}
+.blog-content-article-img{
+    width: 100%;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.blog-article-title-info{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: table;
+    top: 0;
+}
+.article-title-info{
+    width: 100%;
+    height: 100%;
+    display:table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 5px;
+    color: #ffffff;
+}
+.article-title-info a{
+    color: #22d0f0;
+}
+.article-title-info>.tags>a{
+    height: 25px;
+    line-height: 25px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #3f3f3f;
+    border-radius: 2.5rem;
+    margin-top: 2px;
+}
+.read-comment{
+    margin-bottom: 10px;
+}
+.blog-content-desc{
+    width: 100%;
+}
+.content-desc{
+    background: rgb(44, 42, 42);
+    padding: 10px;
+    color: #f6f6f6;
+}
+.blog-article-copyright{
+    margin-top: 20px;
+    line-height: 30px;
+}
+.blog-article-copyright strong{
+    color: #f05c00;
+}
+.blog-article-copyright a{
+    color: #22d0f0;
+    border-bottom:1px dashed #c3c3c3;
+}
+.blog-post-buttons{
+    background: rgb(44, 42, 42);
+    border-top: 1px solid #6fffc2;
+    border-bottom: 1px solid #6fffc2;
+}
+.blog-reward{
+    text-align: center;
+    padding: 5px 10px;
+    margin-top: 20px;
+}
+.blog-reward>span{
+    display: block;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.reward-img>p{
+    display: inline-block;
+}
+.reward-img>p>img{
+    width: 150px;
+    height: 150px;
+}
+.reward-img>p>span{
+    display: block;
+    color: #fff;
+}
+.blog-share{
+    height: 50px;
+    color: #f3f3f3;
+    text-align: center;
+}
+
+/*小屏幕内容*/
+@media screen and (max-width: 900px){
+    .blog-reward{
         display: none;
     }
 }
