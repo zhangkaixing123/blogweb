@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>文章内容页 - 星空博客</title>
+    <meta name="title" content="文章内容页 - 星空博客" />
     <meta name="keywords" content="星空博客,博客,PHP,MySQL,HTML,JavaScript,CSS">
     <meta name="description" content="一个用于记录心情日志,技术文章,黑科技等的博客">
+    <meta name="site" content="http://localhost.com" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./public/share.js-master/css/share.min.css">
     <link rel="stylesheet" href="./css/style1.css">
 </head>
 <body>
@@ -118,7 +121,28 @@
                         </p>
                     </div>
                 </div>
-                <div class="blog-share">分享</div>
+                <div class="blog-share social-share" data-disabled="facebook,linkedin,twitter" id="share"></div>
+            </div>
+            <div class="blog-post-near">
+                <div class="blog-article-prev">
+                    上一篇>: <a href="#">文章标题文章标题文章标题文章标题</a>
+                </div>
+                <div class="blog-article-next">
+                    下一篇>: <a href="#">文章标题文章标题文章标题文章标题</a>
+                </div>
+            </div>
+            <div class="blog-comments">
+                <div class="blog-tag-comment">留言</div>
+                <div class="blog-comment-info">
+                    <form action="" method="post">
+                        <p>
+                            <textarea rows="5" class="comment-content" placeholder="在这里输入你的评论..." style="resize:none;"></textarea>
+                        </p>
+                        <input type="text" class="comment-input" name="user_name" placeholder="称呼*" required>
+                        <input type="text" class="comment-input" name="user_email" placeholder="邮箱*" required>
+                        <input type="text" class="comment-input" name="web_url" placeholder="网站">
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -209,6 +233,7 @@
 </body>
 <script src="./js/jquery-2.1.1.js"></script>
 <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
+<script src="./public/share.js-master/js/social-share.min.js"></script>
 <script>
     $(function () {
         var wH = window.innerHeight;
@@ -277,6 +302,11 @@
             if(search_val == "" || $.trim(search_val).length == 0){
                 alert("搜索内容不能为空",1500);
             }
+        });
+
+        $('#share').share({
+            wechatQrcodeTitle   : '微信扫一扫：分享', // 微信二维码提示文字
+            wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
         });
     });
 </script>

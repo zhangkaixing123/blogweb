@@ -10,6 +10,28 @@ ul,li{
     list-style: none;
 }
 
+body::-webkit-scrollbar,
+textarea::-webkit-scrollbar{
+    width: 9px;
+    height: 16px;
+    background-color: rgb(44, 42, 42);
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track{
+    width: 9px;
+    height: 16px;
+    background-color: rgb(44, 42, 42);
+    border-radius: 20px;
+}
+body::-webkit-scrollbar-thumb,
+textarea::-webkit-scrollbar-thumb{
+    height: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #696969;
+}
+
 /*背景特效*/
 body {
     background: radial-gradient(200% 100% at bottom center, #f7f7b6, #e96f92, #75517d, #1b2947);
@@ -231,6 +253,9 @@ body {
     line-height: 48px;
     border-radius: 2.5rem;
     z-index: 999;
+}
+.gotop:hover{
+    box-shadow: 0 0 10px #181818;
 }
 #gotop{
     display: none;
@@ -709,14 +734,75 @@ body {
     color: #fff;
 }
 .blog-share{
-    height: 50px;
     color: #f3f3f3;
     text-align: center;
+    padding: 5px;
 }
-
+.blog-post-near{
+    background: rgb(44, 42, 42);
+    border-bottom: 1px solid #6fffc2;
+}
+.blog-article-prev,
+.blog-article-next{
+    color: #f6f6f6;
+    padding: 10px 5px;
+}
+.blog-post-near a{
+    color: #22d0f0;
+    border-bottom: 1px dashed #c3c3c3;
+}
+.blog-comments{
+    background: rgb(44, 42, 42);
+}
+.blog-tag-comment{
+    height: 70px;
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 20px;
+    line-height: 70px;
+    color: #f6f6f6;
+}
+.blog-comment-info{
+    text-align: center;
+}
+.comment-content{
+    width: 95%;
+    background: rgb(44, 42, 42);
+    height: 100px;
+    border: 0.125rem solid #777;
+    border-radius: 0.3125rem;
+    padding: 5px;
+    color: #f6f6f6;
+    display: inline-block;
+    overflow-y: visible;
+    font-family: initial;
+    outline-color: invert;
+    outline-width: 0;
+    outline-style: none;
+}
+.blog-comment-info .comment-input{
+    height: 30px;
+    margin-top: 10px;
+    outline-color: invert;
+    outline-width: 0;
+    outline-style: none;
+    background: rgb(44, 42, 42);
+    border: 0.125rem solid #777;
+    border-radius: 0.3125rem;
+    padding: 5px;
+    color: #f6f6f6;
+}
+@media (min-width: 1278px) {
+    .blog-comment-info .comment-input {
+        width: 30%;
+    }
+}
 /*小屏幕内容*/
 @media screen and (max-width: 900px){
     .blog-reward{
         display: none;
+    }
+    .blog-comment-info .comment-input {
+        width: 95%;
     }
 }
