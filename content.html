@@ -10,6 +10,7 @@
     <meta name="site" content="http://localhost.com" />
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./public/share.js-master/css/share.min.css">
+    <link rel="stylesheet" href="./public/OwO/OwO.min.css">
     <link rel="stylesheet" href="./css/style1.css">
 </head>
 <body>
@@ -136,12 +137,34 @@
                 <div class="blog-comment-info">
                     <form action="" method="post">
                         <p>
-                            <textarea rows="5" class="comment-content" placeholder="在这里输入你的评论..." style="resize:none;"></textarea>
+                            <textarea rows="5" class="comment-content OwO-textarea" placeholder="在这里输入你的评论..." style="resize:none;"></textarea>
                         </p>
                         <input type="text" class="comment-input" name="user_name" placeholder="称呼*" required>
                         <input type="text" class="comment-input" name="user_email" placeholder="邮箱*" required>
                         <input type="text" class="comment-input" name="web_url" placeholder="网站">
+
+                        <button class="comment-submit">提交留言</button>
                     </form>
+                </div>
+                <div class="blog-comment-lists">
+                    <div class="blog-tag-comment">已有 <span>3</span> 条留言</div>
+                    <ol>
+                        <li class="blog-comment-list">
+                            <div class="comment-header">
+                                <img src="./images/header.jpg" alt="">
+                            </div>
+                            <div class="comment-name"><a href="#">名称</a></div>
+                            <div class="comment-time">
+                                <span>2020-04-17</span>
+                            </div>
+                            <div class="comment-huifu">
+                                <a href="javascript:void(0)">回复</a>
+                            </div>
+                            <div class="comment-neiro">
+                                <p>内容内容内容内容内容内容内容内容内容</p>
+                            </div>
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
@@ -234,6 +257,7 @@
 <script src="./js/jquery-2.1.1.js"></script>
 <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.12/clipboard.min.js"></script>
 <script src="./public/share.js-master/js/social-share.min.js"></script>
+<script src="./public/OwO/OwO.min.js"></script>
 <script>
     $(function () {
         var wH = window.innerHeight;
@@ -304,9 +328,21 @@
             }
         });
 
-        $('#share').share({
-            wechatQrcodeTitle   : '微信扫一扫：分享', // 微信二维码提示文字
-            wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>'
+        var $config = {
+            wechatQrcodeTitle   : "微信扫一扫：分享", // 微信二维码提示文字
+            wechatQrcodeHelper  : '<p>微信里点“发现”，扫一下</p><p>二维码便可将本文分享至朋友圈。</p>',
+        };
+        socialShare('#share', $config);
+
+
+        var OwO_demo = new OwO({
+            logo: 'OωO表情',
+            container: document.getElementsByClassName('OwO')[0],
+            target: document.getElementsByClassName('OwO-textarea')[0],
+            api: 'http://diygod.github.io/OwO/demo/OwO.json',
+            position: 'down',
+            width: '100%',
+            maxHeight: '250px'
         });
     });
 </script>

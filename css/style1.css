@@ -341,8 +341,7 @@ body {
 .blog-center{
     width: 80%;
     margin: 0 auto;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .blog-info{
     width: 250px;
@@ -758,9 +757,12 @@ body {
     height: 70px;
     font-size: 1.5rem;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 10px;
     line-height: 70px;
     color: #f6f6f6;
+}
+.blog-tag-comment>span{
+    color: #00dcff;
 }
 .blog-comment-info{
     text-align: center;
@@ -792,9 +794,56 @@ body {
     padding: 5px;
     color: #f6f6f6;
 }
+.comment-submit{
+    margin-top: 10px;
+    width: 96%;
+    height: 50px;
+    background-color: #6fffc2;
+    border-radius: 5px;
+    border-style: none;
+    margin-bottom: 10px;
+}
+.blog-comment-lists>ol{
+    width: 96%;
+    margin: 5px auto;
+}
+.blog-comment-list{
+    position: relative;
+    min-height: 100px;
+}
+.blog-comment-list>.comment-header>img{
+    width: 50px;
+    height: 50px;
+    border-radius: 2.5rem;
+}
+.comment-name{
+    position: absolute;
+    top: 2px;
+    left: 60px;
+}
+.comment-name>a,.comment-huifu>a{
+    color: #22d0f0;
+}
+.comment-time{
+    position: absolute;
+    top: 30px;
+    left: 60px;
+    color: #f6f6f6;
+}
+.comment-huifu{
+    position: absolute;
+    top: 30px;
+    right: 5px;
+}
+.comment-neiro{
+    position: absolute;
+    color: #f6f6f6;
+    left: 60px;
+    top: 50px;
+}
 @media (min-width: 1278px) {
     .blog-comment-info .comment-input {
-        width: 30%;
+        width: 30.4%;
     }
 }
 /*小屏幕内容*/
