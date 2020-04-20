@@ -836,14 +836,25 @@ body {
     right: 5px;
 }
 .comment-neiro{
-    position: absolute;
+    margin-left: 60px;
     color: #f6f6f6;
-    left: 60px;
-    top: 50px;
+}
+.comment-children{
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.comment-children>ol{
+    border-left: 4px solid rgba(255,255,255,0.24);
+    padding: 0.25rem;
 }
 @media (min-width: 1278px) {
     .blog-comment-info .comment-input {
         width: 30.4%;
+    }
+}
+@media (max-width: 992px){
+    .blog-comment-info .comment-input {
+        width: 95%;
     }
 }
 /*小屏幕内容*/
